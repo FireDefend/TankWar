@@ -1,25 +1,157 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="singalview_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-lF-kCQ">
+                                <rect key="frame" x="113" y="258" width="95" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="快速游戏"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uKu-Xh-iGz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRK-Zn-YIU">
+                                <rect key="frame" x="113" y="329" width="95" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="蓝牙对战"/>
+                                <connections>
+                                    <action selector="blueButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bzg-bk-PCy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FRK-Zn-YIU" firstAttribute="top" secondItem="m6n-lF-kCQ" secondAttribute="bottom" constant="20" id="6MM-A7-vzu"/>
+                            <constraint firstItem="m6n-lF-kCQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JzW-s0-tar"/>
+                            <constraint firstItem="FRK-Zn-YIU" firstAttribute="centerX" secondItem="m6n-lF-kCQ" secondAttribute="centerX" id="Via-sP-WRs"/>
+                            <constraint firstItem="m6n-lF-kCQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nlc-kN-bdD"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130" y="292"/>
+        </scene>
+        <!--Sub View Controller-->
+        <scene sceneID="hql-zv-W6p">
+            <objects>
+                <viewController storyboardIdentifier="sub" id="t6D-kk-ez1" customClass="SubViewController" customModule="singalview_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NOb-GH-q9A"/>
+                        <viewControllerLayoutGuide type="bottom" id="XVV-Uv-fcS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QCl-Kv-IhX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utI-cG-nJI" customClass="JSAnalogueStick">
+                                <rect key="frame" x="37" y="44" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mp5-dd-BQP" customClass="JSButton">
+                                <rect key="frame" x="37" y="426" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mp5-dd-BQP" firstAttribute="leading" secondItem="QCl-Kv-IhX" secondAttribute="leadingMargin" constant="17" id="IBv-vQ-aCw"/>
+                            <constraint firstItem="utI-cG-nJI" firstAttribute="top" secondItem="NOb-GH-q9A" secondAttribute="bottom" constant="24" id="Uhd-h3-qqc"/>
+                            <constraint firstItem="XVV-Uv-fcS" firstAttribute="top" secondItem="mp5-dd-BQP" secondAttribute="bottom" constant="82" id="apA-bo-4OU"/>
+                            <constraint firstItem="utI-cG-nJI" firstAttribute="leading" secondItem="QCl-Kv-IhX" secondAttribute="leadingMargin" constant="17" id="k31-Tz-kA9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="analogueStick" destination="utI-cG-nJI" id="yZV-dd-RcN"/>
+                        <outlet property="fireButton" destination="mp5-dd-BQP" id="fOo-Ai-g1z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wye-B3-FGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="292"/>
+        </scene>
+        <!--Bluetooth View Controller-->
+        <scene sceneID="ZIn-3j-x7Z">
+            <objects>
+                <viewController storyboardIdentifier="BluetoothView" id="Xql-fI-Lac" customClass="BluetoothViewController" customModule="singalview_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MMq-9i-qbm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ifo-WD-gEj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Sw-9p-s2V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEk-il-UbK">
+                                <rect key="frame" x="132" y="310" width="56" height="30"/>
+                                <state key="normal" title="connect"/>
+                                <connections>
+                                    <action selector="showBrowser:" destination="Xql-fI-Lac" eventType="touchUpInside" id="AHs-NY-lLl"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gVB-RG-b2m" customClass="JSButton">
+                                <rect key="frame" x="46" y="430" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RM0-Bl-Hz2" customClass="JSAnalogueStick">
+                                <rect key="frame" x="34" y="86" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SVi-Sn-HNr">
+                                <rect key="frame" x="40" y="136" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6M-dm-sl7">
+                                <rect key="frame" x="130" y="368" width="60" height="30"/>
+                                <state key="normal" title="开始游戏"/>
+                                <connections>
+                                    <action selector="beginGame:" destination="Xql-fI-Lac" eventType="touchUpInside" id="hMC-ii-bct"/>
+                                    <action selector="showBrowser:" destination="Xql-fI-Lac" eventType="touchUpInside" id="r2o-MM-eSI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xEk-il-UbK" firstAttribute="centerX" secondItem="2Sw-9p-s2V" secondAttribute="centerX" id="2fd-2a-Muj"/>
+                            <constraint firstItem="xEk-il-UbK" firstAttribute="top" secondItem="SVi-Sn-HNr" secondAttribute="bottom" constant="46" id="BU6-k5-Fts"/>
+                            <constraint firstItem="SVi-Sn-HNr" firstAttribute="centerX" secondItem="2Sw-9p-s2V" secondAttribute="centerX" id="Dai-31-3uJ"/>
+                            <constraint firstItem="RM0-Bl-Hz2" firstAttribute="leading" secondItem="2Sw-9p-s2V" secondAttribute="leadingMargin" constant="14" id="L64-PR-4Tj"/>
+                            <constraint firstItem="V6M-dm-sl7" firstAttribute="centerX" secondItem="2Sw-9p-s2V" secondAttribute="centerX" id="R3g-NQ-eHa"/>
+                            <constraint firstItem="SVi-Sn-HNr" firstAttribute="top" secondItem="MMq-9i-qbm" secondAttribute="bottom" constant="116" id="VZC-dc-xsf"/>
+                            <constraint firstItem="Ifo-WD-gEj" firstAttribute="top" secondItem="gVB-RG-b2m" secondAttribute="bottom" constant="78" id="WXV-IY-ePV"/>
+                            <constraint firstItem="gVB-RG-b2m" firstAttribute="leading" secondItem="2Sw-9p-s2V" secondAttribute="leadingMargin" constant="26" id="fFV-Zs-yDC"/>
+                            <constraint firstItem="RM0-Bl-Hz2" firstAttribute="top" secondItem="MMq-9i-qbm" secondAttribute="bottom" constant="66" id="xlY-uf-ztN"/>
+                            <constraint firstItem="V6M-dm-sl7" firstAttribute="top" secondItem="SVi-Sn-HNr" secondAttribute="bottom" constant="104" id="yvl-cN-u2z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="analogueStick" destination="RM0-Bl-Hz2" id="2op-z8-1eO"/>
+                        <outlet property="beginGame" destination="V6M-dm-sl7" id="9cC-x9-AUV"/>
+                        <outlet property="bluetoothTextView" destination="SVi-Sn-HNr" id="AYm-pk-gtN"/>
+                        <outlet property="connect" destination="xEk-il-UbK" id="PvB-Ui-FNy"/>
+                        <outlet property="fireButton" destination="gVB-RG-b2m" id="iWc-oI-tPe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAy-WY-9ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="292"/>
         </scene>
     </scenes>
 </document>
